@@ -2,13 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://lfw2816b0hko" path="res://assets/element_red_diamond.png" id="1_bxi6w"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8l8bn"]
-radius = 25.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpsei"]
+size = Vector2(35, 35)
 
-[node name="Area2D" type="Area2D"]
+[node name="Gem" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bxi6w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8l8bn")
+position = Vector2(7.7486e-07, 6.55651e-07)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_tpsei")
