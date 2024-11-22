@@ -14,5 +14,9 @@ centered = false
 [node name="Paddle" parent="." instance=ExtResource("2_l8xpk")]
 position = Vector2(599, 556)
 
+[node name="Gem2" parent="." instance=ExtResource("3_hvb6v")]
+position = Vector2(439, 70)
+
 [node name="Gem" parent="." instance=ExtResource("3_hvb6v")]
-position = Vector2(858, 79)
+position = Vector2(571, 71)
+speed = 150.0
