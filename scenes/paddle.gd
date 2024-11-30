@@ -19,7 +19,3 @@ func move(delta: float) -> void:
 
 	elif Input.is_action_pressed("Right"):
 		position.x += speed * delta
-
-
-func _on_gem_area_entered(area: Area2D) -> void:
-	print(area)
