@@ -9,8 +9,40 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dictionary()
+	loops()
 
+func loops() -> void:
+	var my_times: Array = [41, 43, 34, 56, 43]
+	
+	
+	for my_time in my_times:
+		print(my_time)
+	
+	print("DONE")
+	
+	for n in range(10):
+		print(n)
+		
+	const STOPPER: int = 10
+	var num: int = 0
+	
+	while num < STOPPER:
+		num+=1
+		print("num: ", num)
+		
+	print("DONE")
+	
+	
+	const PROFILE: Dictionary = {
+		"name": "Jaber",
+		"age": 28,
+		"favorite_game": "MMX6",
+		"occupation": "Software Engineer"
+	}
+	
+	for key in PROFILE.keys():
+		print(key, " -> ", PROFILE[key])
+	
 func dictionary() -> void:
 	var profile = {
 		"name": "Jaber",
