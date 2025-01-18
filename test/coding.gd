@@ -9,8 +9,18 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	loops()
+	string_formatting()
 
+
+func string_formatting() -> void:
+	var lives: int = 10
+	var level_name: String = "Rocky"
+	var speed: float = 312.3245
+	
+	var s: String = "l %d n %s s %.2f" %[lives, level_name, speed]
+	
+	print(s)
+	
 func loops() -> void:
 	var my_times: Array = [41, 43, 34, 56, 43]
 	
