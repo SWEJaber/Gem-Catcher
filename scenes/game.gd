@@ -1,9 +1,13 @@
 extends Node2D
 
+const EXPLODE = preload("res://assets/explode.wav");
+
 @export var gem_scene: PackedScene
 
 @onready var score_label: Label = $Score
 @onready var timer: Timer = $Timer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var _score: int = 0
 
@@ -31,6 +35,14 @@ func spawn_gem() -> void:
 	
 	add_child(new_gem)
 
+
+func play_dead() -> void:
+	audio_stream_player_2d.stop()
+	audio_stream_player.stop()
+	audio_stream_player_2d.stream = EXPLODE
+	audio_stream_player_2d.play()
+
+
 func stop_all() -> void:
 	timer.stop();
 	
@@ -40,6 +52,7 @@ func stop_all() -> void:
 
 func game_over() -> void:
 	stop_all()
+	play_dead()
 
 func _on_timer_timeout() -> void:
 	spawn_gem()
@@ -48,5 +61,8 @@ func _on_timer_timeout() -> void:
 func _on_paddle_area_entered(area: Area2D) -> void:
 	_score += 1 
 	score_label.text = "%05d" % _score
+	
+	audio_stream_player_2d.position = area.position;
+	audio_stream_player_2d.play();
 	
 	area.queue_free()
