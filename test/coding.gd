@@ -9,7 +9,47 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	operators()
+	dictionary()
+
+func dictionary() -> void:
+	var profile = {
+		"name": "Jaber",
+		"age": 28,
+		"address": {
+			"street": "Alwurud",
+			"plz": 23456
+		}
+	}
+	
+	
+	var name = "Jaber"
+	
+	print(profile)
+	print(profile["age"])
+	profile["age"]  = 29
+	
+	print(profile)
+	print(profile["age"])
+	print(profile.address.street)
+	
+	print(profile.keys())
+	
+func arrays() -> void:
+	var fruits: Array = ["apple", "pear", "banana"]
+	
+	print(fruits[0])
+	print(fruits.size())
+	print(type_string(typeof(fruits)))
+	
+	print(fruits)
+	fruits.shuffle()
+	print(fruits)
+	
+	
+	fruits.push_back("kiwi")
+	fruits.push_front("orange")
+	
+	print(fruits)
 	
 func operators() -> void:
 	var num1: int = 3
@@ -44,7 +84,6 @@ func operators() -> void:
 		print("Ooops")
 	
 	print("Ooops2")
-	
 	
 func variables() -> void:
 	print("Hello")
