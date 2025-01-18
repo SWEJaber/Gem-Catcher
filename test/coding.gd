@@ -9,6 +9,44 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	operators()
+	
+func operators() -> void:
+	var num1: int = 3
+	var num2: int = 11
+	
+	
+#	Mathematical operators
+	print(num1 + num2)
+	print(num1 - num2)
+	print(num1 * num2)
+	print(num1 / num2)
+	print(num2 % num1)
+	
+	var result: int = num2 % num1
+	
+	print(num1 > num2)
+	print(num1 < num2)
+	print(num1 == num2)
+	print(num1 != num2)
+	
+#	Conditionals
+	if num1 == 3:
+		print("num1 is 3") 
+			
+		if num2 < 10:
+			print("DANGER!")
+		else:
+			print("We are okay :D")
+	elif num1 == 5:
+		print("num1 is 5")
+	else:
+		print("Ooops")
+	
+	print("Ooops2")
+	
+	
+func variables() -> void:
 	print("Hello")
 	
 #	Variables
@@ -32,8 +70,7 @@ func _ready() -> void:
 	print_name()
 	
 	print(result)
-
-
+	
 func print_name() -> void:
 #	This local variable overrides the global "score" variable
 	var score: int = 500
