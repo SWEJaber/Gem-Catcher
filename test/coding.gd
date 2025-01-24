@@ -1,7 +1,18 @@
 extends Node2D
 
 # Enums
-enum PlayerState { ALIVE, DEAD }
+enum PlayerState { IDLE, WALK, JUMP, ALIVE, DEAD, ATTACK }
+
+func handle_player_state(state: PlayerState):
+#	This is similar to switch statements
+	match state: 
+		PlayerState.IDLE:
+			print("Player is idle")
+		PlayerState.WALK:
+			print("Player is walking")
+		_:
+			print("Unknown player state.")
+
 
 # Script-level score variable
 var _score: int = 100 
@@ -9,9 +20,23 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	string_formatting()
+	handle_player_state(PlayerState.ATTACK)
 
+func classes() -> void:
+	var p1: Player = Player.new("Jabba", 10)
+	p1.say_status()
+	
 
+	Player.say_how_many()
+	var p2: Player = Player.new("Raed", 200)
+	p2.say_status()
+	
+	p1.hit()
+	
+	p1.say_status()
+	
+	Player.say_how_many()
+	
 func string_formatting() -> void:
 	var lives: int = 10
 	var level_name: String = "Rocky"
