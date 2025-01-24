@@ -20,7 +20,11 @@ var _score: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	handle_player_state(PlayerState.ATTACK)
+	var np: Player = Player.new("Jaber", 100)
+	
+	
+	print(np.get_health())
+	
 
 func classes() -> void:
 	var p1: Player = Player.new("Jabba", 10)
